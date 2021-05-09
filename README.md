@@ -1,0 +1,1 @@
+# pirate-blogger-template
