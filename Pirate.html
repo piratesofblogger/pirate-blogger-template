@@ -35,6 +35,58 @@
   }
   </style>
 
+  <style>
+    
+    :root {
+    --primary: #e01705;
+    --secondary: #0a1f44;
+    --primary-invert: #fff;
+    --secondary-invert: #fff;
+    
+    /* DEFAULT COLOR OF ALERT TEXT */
+    --alert-text-primary: #fff;
+    
+    /* DEFAULT COLOR OF TEXTS */
+    --text-primary: #0a1f44;
+    
+    /* FOR BUTTONS & INPUTS */
+    --elements-roundness: 10rem;
+    
+    --space-between-blocks: 5.3rem;
+    /* for mobiles */
+    --space-between-blocks-small-screens: 3rem;
+    }
+    
+      body {
+        background-color:white;
+      }
+      form {box-sizing:border-box;
+        width: 300px;
+        margin: auto;
+        margin-top: 250px;
+      }
+      .search-box {
+      box-sizing:border-box;
+        width:60%;
+        float:left;
+        height:40px;
+        padding:3px 0 0 20px;
+        font-size:15px;
+        border:1px solid rgba(0,0,0,0.3);
+        border-right:none;
+      }
+      .submit-button {
+      box-sizing:border-box;
+        width: 50px;
+        background-color:var(--primary);
+        color: #ffffff;
+        border:none;
+        float:left;
+        height:40px;
+      }
+    </style>
+
+
 </head>
 <body>
 
@@ -55,9 +107,16 @@
 Hello
 </main>
 
-<div class="one-third column">
- <img src="images/home.png" />	
-hi uooooooo
+<div class="one-third column>
+
+
+    <h2>Search</h2>
+    <form action="/form/submit" method="GET">
+      <input type="text" name="text" class="search-box" placeholder="Search here!">
+      <button class="submit-button"><i class="fas fa-search"></i></button>
+      <div style="clear:both;"></div>
+    </form>
+
 </div>
 
 
