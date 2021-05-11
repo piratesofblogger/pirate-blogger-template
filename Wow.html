@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+
+/*RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*SKELETON*/
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.8em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 700; }
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 3.0rem; }
+  h2 { font-size: 3.6rem; }
+  h3 { font-size: 3.2rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p {
+  margin-top: 0; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+ 
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+
+
+.feature img {
+ margin-bottom: 15px;
+ max-width: 100%;
+ height: auto;
+}
+footer li{
+display:inline;
+margin-right:35px;
+
+}
+
+/*Navigation*/
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #121212;
+  background: #ffffff;
+}
+
+body.scrolling {
+  overflow-y: hidden;
+}
+
+a,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  a,
+  button {
+    cursor: default !important;
+    border: none;
+    outline: none;
+  }
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  height: auto;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+}
+
+.brand {
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: inherit;
+  border: none;
+  outline: none;
+  color: #e91e63;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  height: auto;
+  padding: 0.75rem 0;
+}
+.header .navbar {
+  max-width: 100%;
+  height: auto;
+}
+
+.header .menu > .menu-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+.header .menu > .menu-item > a {
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: inherit;
+  padding: 1rem 0;
+  border: none;
+  outline: none;
+  color: #121212;
+  text-transform: capitalize;
+  text-rendering: optimizeLegibility;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header .menu > .menu-item > a .expand {
+  position: relative;
+  display: inline-block;
+  height: 0.75rem;
+  width: 0.75rem;
+  margin-left: 0.35rem;
+  border: none;
+  outline: none;
+  pointer-events: none;
+}
+
+.header .menu > .menu-item > a .expand:before, .header .menu > .menu-item > a .expand:after {
+  position: absolute;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: #121212;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header .menu > .menu-item:hover > a {
+  color: #e91e63;
+}
+
+.header .menu > .menu-item:hover > a .expand::before, .header .menu > .menu-item:hover > a .expand::after {
+  background: #e91e63;
+}
+
+.header .menu > .menu-item > a .expand::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+      -ms-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.header .menu > .menu-item > .sub-menu > .menu-item > a:hover {
+  color: #e91e63;
+}
+
+.header .menu > .menu-item > .sub-menu {
+  position: absolute;
+  left: -1rem;
+  top: 100%;
+  width: 13rem;
+  height: auto;
+  padding: 0.75rem 0;
+  border: none;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  border-top: 3px solid #e91e63;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  -webkit-transform: translateY(1rem);
+      -ms-transform: translateY(1rem);
+          transform: translateY(1rem);
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header .menu > .menu-item > .sub-menu > .menu-item {
+  display: block;
+}
+
+.header .menu > .menu-item > .sub-menu > .menu-item > a {
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: inherit;
+  padding: 0.5rem 1.25rem;
+  color: #121212;
+  text-transform: capitalize;
+  text-rendering: optimizeLegibility;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header .opened-menu {
+  position: relative;
+  display: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 1rem;
+  border: none;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  background: none;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header .opened-menu span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  border: none;
+  outline: none;
+  opacity: 1;
+  border-radius: 0.25rem;
+  background: #121212;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.header .opened-menu span:nth-child(1) {
+  top: 0;
+}
+
+.header .opened-menu span:nth-child(2), .header .opened-menu span:nth-child(3) {
+  top: 0.5rem;
+}
+
+.header .opened-menu span:nth-child(4) {
+  top: 1rem;
+}
+
+.header .closed-menu {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.header .closed-menu img.closed-icon {
+  display: block;
+  width: 1rem;
+  height: auto;
+}
+
+.header .overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+@media only screen and (min-width: 993px) {
+  .header .menu > .menu-item-has-children:hover > .sub-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .header .menu > .menu-item-has-children:hover > a .expand::after {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        -ms-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header .overlay.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .header .navbar {
+    position: fixed;
+    top: 0;
+    left: -18rem;
+    width: 18rem;
+    height: 100%;
+    padding: 1rem 0;
+    z-index: 999;
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    background: #ffffff;
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .header .navbar.active {
+    left: 0rem;
+    opacity: 1;
+    visibility: visible;
+  }
+  .header .navbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .header .navbar::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #e6e6e6;
+    -webkit-box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+  .header .menu {
+    width: 100%;
+    height: auto;
+    margin-top: 3.5rem;
+  }
+  .header .menu > .menu-item {
+    display: block;
+    margin: 0;
+  }
+  .header .menu > .menu-item-has-children > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .menu > .menu-item > a {
+    padding: 0.75rem 1rem;
+    color: #121212;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .header .menu > .menu-item:first-child > a {
+    border-top: 1px solid #f2f2f2;
+  }
+  .header .menu > .menu-item > a .expand::before, .header .menu > .menu-item > a .expand::after {
+    background: #121212;
+  }
+  .header .menu > .menu-item-has-children.active > a .expand:after {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        -ms-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .header .menu > .menu-item > .sub-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-height: 0;
+    padding: 0px;
+    border: none;
+    outline: none;
+    opacity: 1;
+    overflow: hidden;
+    visibility: visible;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  .header .menu > .menu-item > .sub-menu > .menu-item > a {
+    padding: 0.75rem 2rem;
+    color: #121212;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .header .opened-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .header .closed-menu {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 1rem;
+    right: 0.5rem;
+  }
+}
+
+.main {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 6rem 0;
+}
+</style>
+<script>
+const openedMenu = document.querySelector('.opened-menu');
+const closedMenu = document.querySelector('.closed-menu');
+const navbarMenu = document.querySelector('.navbar');
+const menuOverlay = document.querySelector('.overlay');
+
+// Opened navbarMenu
+// Closed navbarMenu
+// Closed navbarMenu by Click Outside
+openedMenu.addEventListener('click', toggleMenu);
+closedMenu.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+
+// Toggle Menu Function
+function toggleMenu() {
+   navbarMenu.classList.toggle('active');
+   menuOverlay.classList.toggle('active');
+   document.body.classList.toggle('scrolling');
+}
+
+navbarMenu.addEventListener('click', (event) => {
+   if (event.target.hasAttribute('data-toggle') && window.innerWidth <= 992) {
+      // Prevent Default Anchor Click Behavior
+      event.preventDefault();
+      const menuItemHasChildren = event.target.parentElement;
+
+      // If menuItemHasChildren is Expanded, Collapse It
+      if (menuItemHasChildren.classList.contains('active')) {
+         collapseSubMenu();
+      } else {
+         // Collapse Existing Expanded menuItemHasChildren
+         if (navbarMenu.querySelector('.menu-item-has-children.active')) {
+            collapseSubMenu();
+         }
+         // Expand New menuItemHasChildren
+         menuItemHasChildren.classList.add('active');
+         const subMenu = menuItemHasChildren.querySelector('.sub-menu');
+         subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+      }
+   }
+});
+
+// Collapse Sub Menu Function
+function collapseSubMenu() {
+   navbarMenu.querySelector('.menu-item-has-children.active .sub-menu').removeAttribute('style');
+   navbarMenu.querySelector('.menu-item-has-children.active').classList.remove('active');
+}
+
+// Fixed Resize Screen Function
+function resizeScreen() {
+   // If navbarMenu is Open, Close It
+   if (navbarMenu.classList.contains('active')) {
+      toggleMenu();
+   }
+
+   // If menuItemHasChildren is Expanded, Collapse It
+   if (navbarMenu.querySelector('.menu-item-has-children.active')) {
+      collapseSubMenu();
+   }
+}
+
+window.addEventListener('resize', () => {
+   if (this.innerWidth > 992) {
+      resizeScreen();
+   }
+});
+</script>
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+ <!--Top Nav pages-->
+ <div id="nav-k" class="twelve columns">
+ <ul>
+ <li>About us</li>
+ <li>contact us</li>
+ <li>Disclaimer</li>
+ <li>Privacy policy</li>
+ </ul>
+ 
+ </div>
+ 
+
+ <!--Blog title-->
+ <div class="three columns">
+ <h1>DS</h1>
+ </div>
+ 
+ <!--Navbar-->
+ <div id="nav-main-k" class="twelve columns">
+ 
+ <!-- Section: Header -->
+ <header class="header">
+ <div class="container">
+ <section class="wrapper">
+ <h1><a href="./index.html" class="brand">Brand</a></h1>
+ <nav class="navbar">
+ <button type="button" class="opened-menu">
+ 
+                  <i class="fas fa-bars"></i>
+               </button>
+               <div class="overlay"></div>
+                  <button type="button" class="closed-menu">
+                     <img src="./asset/closed.svg" class="closed-icon" alt="closed">
+                  </button>
+                  <ul class="menu">
+                     <li class="menu-item"><a href="#">Home</a></li>
+                     <li class="menu-item"><a href="#">About</a></li>
+                     <li class="menu-item menu-item-has-children">
+                        <a href="#" data-toggle="sub-menu">Services<i class="expand"></i></a>
+                        <ul class="sub-menu">
+                           <li class="menu-item"><a href="#">Web Design</a></li>
+                           <li class="menu-item"><a href="#">Web Development</a></li>
+                           <li class="menu-item"><a href="#">Brand Marketing</a></li>
+                           <li class="menu-item"><a href="#">SEO and Optimizing</a></li>
+                        </ul>
+                     </li>
+                     <li class="menu-item menu-item-has-children">
+                        <a href="#" data-toggle="sub-menu">Planning <i class="expand"></i></a>
+                        <ul class="sub-menu">
+                           <li class="menu-item"><a href="#">Basic Plan</a></li>
+                           <li class="menu-item"><a href="#">Standard Plan</a></li>
+                           <li class="menu-item"><a href="#">Premium Plan</a></li>
+                           <li class="menu-item"><a href="#">Professional Plan</a></li>
+                        </ul>
+                     </li>
+                     <li class="menu-item menu-item-has-children">
+                        <a href="#" data-toggle="sub-menu">Article <i class="expand"></i></a>
+                        <ul class="sub-menu">
+                           <li class="menu-item"><a href="#">Article One</a></li>
+                           <li class="menu-item"><a href="#">Article Two</a></li>
+                           <li class="menu-item"><a href="#">Article Three</a></li>
+                           <li class="menu-item"><a href="#">Article Four</a></li>
+                           <li class="menu-item"><a href="#">Article Five</a></li>
+                           <li class="menu-item"><a href="#">Article Six</a></li>
+                           <li class="menu-item"><a href="#">Article Seven</a></li>
+                        </ul>
+                     </li>
+                     <li class="menu-item"><a href="#">Contact</a></li>
+                  </ul>
+               </nav>
+ </section>
+ </div>
+ </header>
+ 
+ 
+ 
+ 
+ </div>
+ 
+ 
+ <!--Main-->
+ <div id="headerImage" class="sixteen columns">
+ <img src="images/field.jpg" />
+ </div>
+ 
+ <div id="welcome" class="sixteen columns">
+ <h1>Built with Skeleton</h1>
+ <p>This page was built for Design Shack using Skeleton, an awesome framework for building responsive web pages...</p>
+ </div>
+ 
+ <div class="one-third column feature">
+ 
+ <h2>One</h2>
+ <img src="http://lorempixum.com/400/100/nature/1" />
+ <p>Lorem ipsum dolor sit amet...</p>
+ </div>
+ 
+ <div class="one-third column feature">
+ 
+ <h2>Two</h2>
+ <img src="http://lorempixum.com/400/100/nature/2" />
+ <p>Lorem ipsum dolor sit amet...</p>
+ </div>
+ 
+ <div class="one-third column feature">
+ 
+ <h2>Three</h2>
+ <img src="#" />
+ <p>Lorem ipsum dolor sit amet...</p>
+ </div>
+ 
+ 
+ 
+ <!--Footer -->
+ <footer class="column">
+ <div class="one-third column feature">
+ <h4>Pages</h4>
+ <ul>
+ <li>About us</li>
+ <li>contact us</li>
+ <li>Disclaimer</li>
+ <li>Privacy policy</li>
+ </ul>
+ </div>
+ <div class="one-third column feature">
+ <h4>services</h4>
+ <ul>
+ <li>Design</li>
+ <li>Blog</li>
+ <li>writing</li>
+ <li>Logo</li>
+ 
+ </ul>
+ 
+ 
+ </div>
+ <div class="one-third column feature">
+ <h4>Features</h4>
+ <ul>
+ <li>Booking</li>
+ <li>Help</li>
+ <li>FAQs</li>
+ 
+ </ul>
+ 
+ 
+ </div>
+ 
+ 
+ </footer>
+ 
+</div>
+
+</body>
+
+</html>
